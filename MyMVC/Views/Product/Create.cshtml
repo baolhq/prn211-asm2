@@ -1,0 +1,43 @@
+@model Product
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<form method="post">
+    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+
+    <div class="form-group">
+        <label asp-for="ProductName"></label>
+        <input asp-for="ProductName" type="text" class="form-control" placeholder="Enter product name">
+        <span asp-validation-for="ProductName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Weight"></label>
+        <input asp-for="Weight" type="text" class="form-control" placeholder="Enter product weight (gram)">
+        <span asp-validation-for="Weight" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="UnitPrice"></label>
+        <input asp-for="UnitPrice" type="text" class="form-control" placeholder="Enter unit price">
+        <span asp-validation-for="UnitPrice" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="UnitsInStock"></label>
+        <input asp-for="UnitsInStock" type="text" class="form-control" placeholder="Enter unit in stock">
+        <span asp-validation-for="UnitsInStock" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-block btn-outline-dark mt-5 mb-3">Create</button>
+    <a asp-action="Index" class="btn btn-block btn-outline-danger">Cancel</a>
+
+</form>
+
+@section Scripts{
+@{
+    <partial name="_ValidationScriptsPartial" />
+}
+}

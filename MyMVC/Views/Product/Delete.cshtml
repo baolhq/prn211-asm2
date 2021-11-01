@@ -1,0 +1,31 @@
+@model Product
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<form asp-action="Delete" asp-route-id="@Model.ProductID" method="post">
+    <div class="form-group">
+        <label asp-for="ProductName"></label>
+        <input asp-for="ProductName" type="text" class="form-control" placeholder="Enter product name" readonly>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Weight"></label>
+        <input asp-for="Weight" type="text" class="form-control" placeholder="Enter product weight (gram)" readonly>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="UnitPrice"></label>
+        <input asp-for="UnitPrice" type="text" class="form-control" placeholder="Enter unit price" readonly>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="UnitsInStock"></label>
+        <input asp-for="UnitsInStock" type="text" class="form-control" placeholder="Enter unit in stock" readonly>
+    </div>
+
+    <button type="submit" class="btn btn-block btn-outline-danger mt-5 mb-3">Delete</button>
+    <a asp-action="Index" class="btn btn-block btn-outline-dark">Cancel</a>
+
+</form>
